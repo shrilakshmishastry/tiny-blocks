@@ -1,0 +1,37 @@
+.container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+}
+
+.card-container {
+      position: relative;
+}
+
+.card {
+      width: 200px;
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      background-color: bisque;
+      border-radius: 8px;
+      padding: 1rem;
+}
+
+img {
+      position: absolute;
+      bottom: -1.5rem;
+      left: 0.9rem;
+      border-radius: 50%;
+      border: 5px solid #ffffff;
+}
+
+p {
+      margin-top: 0px;
+      margin-bottom: 0px;
+}
+
+.profession {
+      color: #9C9B9A;
+      font-weight: lighter;
+}
