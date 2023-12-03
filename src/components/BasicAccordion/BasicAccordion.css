@@ -1,0 +1,28 @@
+.accordion-grid-gap {
+      gap: 24px;
+}
+
+.container {
+      border: 1px #dde0e4 solid;
+}
+
+.panel-visible {
+      display: block;
+}
+
+.panel-hidden {
+      display: none;
+}
+
+button:focus {
+      outline: none;
+}
+
+h3:focus-within,
+h3:active {
+      outline: 5px auto -webkit-focus-ring-color;
+}
+
+.panel-width {
+      width: 50svw;
+}
