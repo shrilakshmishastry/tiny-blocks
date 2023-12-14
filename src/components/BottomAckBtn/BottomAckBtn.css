@@ -1,0 +1,26 @@
+.container {
+      display: flex;
+      flex-direction: column;
+      overflow-y: scroll;
+      background-color: aqua;
+      height: 100vh;
+}
+
+header {
+      background-color: pink;
+      flex-shrink: 0;
+      height: 100px;
+}
+
+.ipt {
+      background-color: blue;
+      flex: 1;
+      height: 25vh;
+      overflow-y: auto;
+}
+
+.btn {
+      background-color: green;
+      flex-shrink: 0;
+
+}
