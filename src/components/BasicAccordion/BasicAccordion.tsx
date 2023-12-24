@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../../styles/index.css";
+import "@/style/index.css";
 import "./BasicAccordion.css";
 
 type BasicAccordionProps = {
