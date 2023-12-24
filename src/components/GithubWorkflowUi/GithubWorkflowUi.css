@@ -1,0 +1,41 @@
+@import url('../../styles/index.css');
+
+.container {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      gap: 0 !important;
+}
+
+.row {
+      display: flex;
+      flex-direction: row;
+      outline-offset: -3px;
+
+      &:hover {
+
+            outline: 3px solid #5E9ED6;
+            border-radius: 5px;
+      }
+}
+
+
+.content {
+      width: 50%;
+      padding: 16px 0 16px 16px;
+}
+
+.command {
+
+      border-left: 1px solid #30363d;
+      border-right: 1px solid #30363d;
+      background-color: #F5F8FA;
+}
+
+.command-with-border-bottom {
+      border-bottom: 1px solid #30363d;
+}
+
+.command-with-border-top {
+      border-top: 1px solid #30363d;
+}
