@@ -10,3 +10,10 @@
 ## Components
 
 - Feedback card
+
+## TODO
+
+- add url import shorthand setting in ts.config
+- performance effect on importing index.css in every component
+- eslint
+- add github action
