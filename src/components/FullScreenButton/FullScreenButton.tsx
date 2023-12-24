@@ -56,9 +56,19 @@ const FullScreenButton = (props: FullScreenButtonProps) => {
   return (
     <div className="outer-container" ref={resizeBtn} tabIndex={0}>
       {props.children}
-      <button style={props.buttonStyle} className={`btn`} onClick={onClick}>
+      <button
+        aria-label={
+          isFSMode
+            ? "Click on to exit full screen"
+            : "Click on to enter full screen"
+        }
+        style={props.buttonStyle}
+        className={`btn`}
+        onClick={onClick}
+      >
         {isFSMode ? (
           <svg
+            aria-hidden
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
             viewBox="0 0 16 16"
@@ -73,6 +83,7 @@ const FullScreenButton = (props: FullScreenButtonProps) => {
           </svg>
         ) : (
           <svg
+            aria-hidden
             className="zoom-in-btn"
             xmlns="http://www.w3.org/2000/svg"
             width="16"
