@@ -1,0 +1,40 @@
+.outer-container {
+      background-color: #ffffff;
+      position: relative;
+}
+
+
+
+.zoom-in-btn:hover {
+      animation: zoom-in 0.5s;
+}
+
+@keyframes zoom-in {
+
+      0%,
+      100% {
+            transform: scale(1);
+
+      }
+
+      50% {
+            transform: scale(1.5);
+      }
+}
+
+.zoom-out-btn:hover {
+      animation: zoom-out 0.5s;
+}
+
+@keyframes zoom-out {
+
+      0%,
+      100% {
+            transform: scale(-1);
+
+      }
+
+      50% {
+            transform: scale(-1.5);
+      }
+}
