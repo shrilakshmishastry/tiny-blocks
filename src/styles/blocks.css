@@ -14,3 +14,15 @@
 .around {
       justify-content: space-around;
 }
+
+.center {
+      justify-content: center;
+}
+
+.start {
+      justify-content: flex-start;
+}
+
+.items-center {
+      align-items: center;
+}

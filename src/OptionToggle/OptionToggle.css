@@ -1,0 +1,54 @@
+.container {
+      position: relative;
+}
+
+.btn-container {
+      position: relative;
+      width: 120px;
+}
+
+.btn-base {
+      border: 1px solid #000;
+}
+
+.close-btn {
+      border-radius: 50%;
+      position: absolute;
+      top: 3px;
+      right: 2%;
+}
+
+.filter-btn {
+      width: 120px;
+}
+
+.filter-btn:active,
+.filter-btn:focus,
+.close-btn:active,
+.close-btn:focus {
+      border: 1px solid #007BFF;
+      border-radius: 4px;
+}
+
+.panel {
+      display: flex;
+      flex-direction: column;
+      z-index: 1;
+      position: absolute;
+      background-color: #fbfaf9;
+      width: 120px;
+}
+
+.panel:focus,
+.panel:active {
+      border: 1px solid #007BFF;
+}
+
+.panelItem:focus,
+.panelItem:active {
+      background-color: aqua;
+}
+
+.panelItem:hover {
+      background-color: #DCDBDA;
+}
