@@ -17,3 +17,4 @@
 - performance effect on importing index.css in every component
 - eslint
 - add github action
+- write plop file or script to generate basic structure of component
