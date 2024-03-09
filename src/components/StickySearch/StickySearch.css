@@ -1,0 +1,31 @@
+header {
+      height: 100px;
+      background-color: green;
+      width: 100%;
+      position: sticky;
+      top: 0;
+      margin-bottom: 20px;
+}
+
+
+
+.input-sticky {
+      background-color: yellow;
+}
+
+input {
+      width: 300px;
+}
+
+section {
+      height: 100svh;
+      overflow-y: auto;
+}
+
+label {
+      display: flex;
+      flex-direction: column;
+      position: sticky;
+      top: 120px;
+      padding: 1rem;
+}
