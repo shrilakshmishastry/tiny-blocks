@@ -1,0 +1,20 @@
+.btn-base {
+  padding: 20px 30px;
+  border-radius: 10px;
+}
+
+.active {
+  background-color: #262626;
+  color: #ffffff;
+}
+
+.non-active {
+  background-color: #f5f6f7;
+  color: #262626;
+}
+
+.date {
+  font-size: 25px;
+  font-weight: 600;
+  padding-top: 8px;
+}

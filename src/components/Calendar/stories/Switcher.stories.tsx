@@ -9,6 +9,10 @@ const meta: Meta<typeof Switcher> = {
     onNextCtaClick: { action: true },
     onPreviousCtaClick: { action: true },
     onTodayCtaClick: { action: true },
+    view: {
+      control: { type: "select" },
+      options: ["WEEK", "DAY", "MONTH"],
+    },
   },
 };
 

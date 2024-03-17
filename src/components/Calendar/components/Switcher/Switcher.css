@@ -3,10 +3,14 @@
   background-color: #f5f6f7;
   padding: 10px;
   font-size: medium;
+  display: flex;
+  align-items: center;
 }
 
 .switcher-container {
   gap: 8px;
+  display: flex;
+  align-items: flex-start;
 }
 
 .today-cta {

@@ -1,5 +1,6 @@
 import "@/style/button.css";
 import "./Switcher.css";
+import { ViewsType } from "@/components/Calendar/types";
 
 type SwitcherProps = {
   /**
@@ -14,6 +15,10 @@ type SwitcherProps = {
    * handler for today button click
    */
   onTodayCtaClick: () => void;
+  /**
+   * which view the calendar is in currently
+   */
+  view: ViewsType;
 };
 
 /**
@@ -29,9 +34,14 @@ type SwitcherProps = {
  */
 const Switcher = (props: SwitcherProps) => {
   return (
-    <section className="flex-row switcher-container">
-      <button className="btn cta-base" onClick={props.onPreviousCtaClick}>
+    <section className="switcher-container">
+      <button
+        aria-label={`go to previous ${props.view}`}
+        className="btn cta-base"
+        onClick={props.onPreviousCtaClick}
+      >
         <svg
+          aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="16"
           height="16"
@@ -50,8 +60,13 @@ const Switcher = (props: SwitcherProps) => {
       >
         Today
       </button>
-      <button className="btn cta-base" onClick={props.onNextCtaClick}>
+      <button
+        aria-label={`go to next ${props.view}`}
+        className="btn cta-base"
+        onClick={props.onNextCtaClick}
+      >
         <svg
+          aria-hidden
           xmlns="http://www.w3.org/2000/svg"
           width="16"
           height="16"
