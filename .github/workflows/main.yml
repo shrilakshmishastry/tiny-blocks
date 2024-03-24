@@ -9,4 +9,4 @@ jobs:
    steps:
      - run: echo " the job was automatically triggered by a ${{github.event_name}} event"
      - run: echo "the name of branch is ${{github.ref}} and repository ${{github.repository}}"
- 
+     - run: ls ${{github.workspace}}
