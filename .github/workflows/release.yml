@@ -22,7 +22,7 @@ jobs:
           token: ${{secrets.GITHUB_TOKEN}}
 
       - name: install dependencies
-        run: npm install
+        run: yarn
 
       - name: set up git and authenticate
         run: |
@@ -38,7 +38,7 @@ jobs:
             exit 1
           fi
       - name: version bump up
-        run: npm version patch
+        run: yarn version minor
        
          
 
