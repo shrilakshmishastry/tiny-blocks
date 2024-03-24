@@ -1,6 +1,6 @@
 name: version update and auto release
 
-run-name: version update and auto release
+run-name: version update and auto-release
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
       - name: install dependencies
         run: yarn
 
-      - name: set up git and authetnticate
+      - name: set up git and authenticate
         run: |
           git config --global user.email "shrilakshmishastry@gmail.com"
           git config --global user.name "shrilakshmishastry"  
