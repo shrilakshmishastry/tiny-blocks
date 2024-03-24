@@ -22,8 +22,20 @@ jobs:
       - name: install dependencies
         run: yarn
 
+      - name: set up git
+        run: |
+          git config --global user.email "shrilakshmishastry@gmail.com"
+          git config --global user.name "shrilakshmishastry"  
+
+      - name: Authenticate with GitHub package registry
+         with:
+          persist-credentials: false
+          token: ${{secrets.GITHUB_TOKEN}}
+
       - name: version bump up
-        run: yarn version --patch
+        run: yarn version patch
+
+         
 
       - name: push changes and create tag
         run: |   
