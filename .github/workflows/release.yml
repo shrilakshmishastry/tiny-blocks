@@ -18,6 +18,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "20.x"
+          persist-credentials: false
+          token: ${{secrets.GITHUB_TOKEN}}
 
       - name: install dependencies
         run: yarn
@@ -26,13 +28,11 @@ jobs:
         run: |
           git config --global user.email "shrilakshmishastry@gmail.com"
           git config --global user.name "shrilakshmishastry"  
-          with:
-          persist-credentials: false
-          token: ${{secrets.GITHUB_TOKEN}}
+         
 
       - name: version bump up
         run: yarn version patch
-
+       
          
 
       - name: push changes and create tag
