@@ -1,0 +1,2 @@
+name: GITHUB_ACTIONS_TRIAL
+run-name: ${{github.actor}} is testing out github actions
