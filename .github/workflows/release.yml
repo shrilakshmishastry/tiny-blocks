@@ -22,13 +22,11 @@ jobs:
       - name: install dependencies
         run: yarn
 
-      - name: set up git
+      - name: set up git and authetnticate
         run: |
           git config --global user.email "shrilakshmishastry@gmail.com"
           git config --global user.name "shrilakshmishastry"  
-
-      - name: Authenticate with GitHub package registry
-         with:
+          with:
           persist-credentials: false
           token: ${{secrets.GITHUB_TOKEN}}
 
