@@ -30,6 +30,13 @@ jobs:
           git config --global user.name "shrilakshmishastry"  
          
 
+      - name: Check if directory is clean
+        run: |
+          if [[ -n $(git status -s) ]]; then
+            echo "Working directory is not clean."
+            git status
+            exit 1
+          fi
       - name: version bump up
         run: npm version patch
        
