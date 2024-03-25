@@ -13,6 +13,8 @@ jobs:
    steps:
       - name: checkout
         uses: actions/checkout@v4
+        with:
+             token: ${{secrets.GITHUB_TOKEN}} 
         
       - name: install node
         uses: actions/setup-node@v3
@@ -40,10 +42,23 @@ jobs:
              
       - name: version bump up
         run: |
-            yarn version --patch
+            yarn version --minor
             cat package.json  
+      
+      - name: create PR  
+        run: |
+             git checkout -b version-bump-up
+             git add .
+             git commit -m "chore: version bump up"
+             git push origin version-bump-up
+
+      - name: merge PR to main
+       
+        run: |
+             git checkout main
+             git merge version-bump-up
         
-         
+              
 
       - name: push changes and create the tag
         run: |   
