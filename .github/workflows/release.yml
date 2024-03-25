@@ -11,21 +11,22 @@ jobs:
   version-bump-up:
    runs-on: ubuntu-latest
    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        
       - name: install node
         uses: actions/setup-node@v3
         with:
-          node-version: "20.x"
-          persist-credentials: false
-          token: ${{secrets.GITHUB_TOKEN}}
-
+          node-version: 'latest'
+         
       - name: Install Yarn
         run: | 
              npm install -g yarn@latest  
              yarn version
+             npm version
 
 
-      - name: checkout
-        uses: actions/checkout@v4
+     
              
       - name: install dependency
         run: yarn
