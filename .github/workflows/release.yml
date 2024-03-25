@@ -28,17 +28,18 @@ jobs:
         run: |
           git config --global user.email "shrilakshmishastry@gmail.com"
           git config --global user.name "shrilakshmishastry"  
-         
-         
-      - name: version bump up
-        run: yarn version --new-version minor
-
+      
       - name: checkout to a new branch 
         run: |
           git checkout -b pr-merge-to-develop-temp-branch
           git add .
           git commit -m "chore: release new tag "
-          git push origin pr-merge-to-develop-temp-branch
+          git push origin pr-merge-to-develop-temp-branch    
+         
+      - name: version bump up
+        run: yarn version --new-version minor
+
+     
 
       - name: rise PR and merge
         uses: peter-evans/create-pull-request@v3
