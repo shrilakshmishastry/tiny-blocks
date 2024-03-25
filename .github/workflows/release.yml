@@ -22,10 +22,8 @@ jobs:
           token: ${{secrets.GITHUB_TOKEN}}
 
       - name: Install Yarn
-        run: npm install -g yarn@latest     
-
-      - name: install dependencies
         run: | 
+             npm install -g yarn@latest  
              yarn
              echo "${{yarn version}}"
 
