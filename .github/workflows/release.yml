@@ -15,6 +15,10 @@ jobs:
         uses: actions/checkout@v4
         with:
              token: ${{secrets.GITHUB_TOKEN}} 
+
+      - name: create new temp branch 
+        run:  git checkout -b version-bump-up
+                 
         
       - name: install node
         uses: actions/setup-node@v3
@@ -44,19 +48,20 @@ jobs:
         run: |
             yarn version --minor
             cat package.json  
-      
-      - name: create PR  
+
+      - name: push temp branch
         run: |
-             git checkout -b version-bump-up
-             git add .
-             git commit -m "chore: version bump up"
-             git push origin version-bump-up
+            git add .
+            git commit -m "chore: version bump up"
+            git push origin version-bump-up  
+      
 
       - name: merge PR to main
        
         run: |
              git checkout main
-             git merge version-bump-up
+             git pull origin version-bump-up
+             git push origin main
         
               
 
