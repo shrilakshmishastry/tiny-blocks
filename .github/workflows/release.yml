@@ -16,6 +16,7 @@ jobs:
         with:
              token: ${{secrets.GITHUB_TOKEN}} 
 
+   
       - name: create new temp branch 
         run:  git checkout -b version-bump-up
                  
@@ -58,8 +59,12 @@ jobs:
 
       - name: merge PR to main
        
-        run: git checkout main
-             echo ${{github.ref}}
+        run: | 
+            git checkout main
+            echo "${{github.ref}}"
+             
+      - name: delete version bump up branch
+        run: git branch -D version-bump-up        
             
       - name: Push changes
         uses: ad-m/github-push-action@master
