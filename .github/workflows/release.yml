@@ -25,7 +25,8 @@ jobs:
         run: npm install -g yarn@latest     
 
       - name: install dependencies
-        run: yarn
+        run: | 
+             yarn
              echo "${{yarn version}}"
 
       - name: set up git and authenticate
