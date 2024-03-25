@@ -61,6 +61,7 @@ jobs:
        
         run: | 
             git checkout main
+            git pull origin version-bump-up  
             echo "${{github.ref}}"
              
       - name: delete version bump up branch
