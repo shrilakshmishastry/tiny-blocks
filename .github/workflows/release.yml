@@ -36,7 +36,7 @@ jobs:
              
       - name: version bump up
         run: |
-            yarn version patch
+            yarn --new-version patch
             cat package.json
 
      
