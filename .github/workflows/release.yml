@@ -48,7 +48,7 @@ jobs:
          commit-message: "Automated pull request creation"
          title: "Update the main branch"
          body: "Automatically updating the main branch via GitHub Actions"
-         branch: main
+         branch: temp
          base: main
        
         
