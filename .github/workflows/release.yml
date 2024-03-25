@@ -29,15 +29,30 @@ jobs:
           git config --global user.email "shrilakshmishastry@gmail.com"
           git config --global user.name "shrilakshmishastry"  
          
-
-    
+         
       - name: version bump up
         run: yarn version --new-version minor
-       
+
+      - name: checkout to new branch 
+        run: |
+          git checkout -b pr-merge-to-develop-temp-branch
+          git add .
+          git commit -m "chore: release new tag "
+          git push origin pr-merge-to-develop-temp-branch
+
+      - name: rise PR and merge
+        uses: peter-evans/create-pull-request@v3
+        with: 
+         token: ${{secrets.GITHUB_TOKEN}}
+         commit-message: "Automated pull request creation"
+         title: "Update main branch"
+         body: "Automatically updating main branch via GitHub Actions"
+         branch: pr-merge-to-develop-temp-branch
+         base: main
+        
          
 
       - name: push changes and create tag
         run: |   
-          git push --follow-tags origin HEAD:refs/heads/main
           git push --tags
 
