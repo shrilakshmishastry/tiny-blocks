@@ -1,0 +1,16 @@
+.event-card-container {
+  display: grid;
+  position: relative;
+  background-color: aqua;
+  width: calc(100% / 7);
+  height: 100%;
+  grid-template-rows: auto 25%;
+  left: 10px;
+  &:active {
+    box-shadow: 1px 1px 5px 1px #ececea;
+  }
+}
+
+.footer {
+  background-color: green;
+}

@@ -24,7 +24,8 @@
     "paths": {
       "@/*": ["*"],
       "@/assets/*": ["assets/*"],
-      "@/style/*": ["styles/*"]
+      "@/style/*": ["styles/*"],
+      "@/components/*": ["components/*"],
     }
   },
 

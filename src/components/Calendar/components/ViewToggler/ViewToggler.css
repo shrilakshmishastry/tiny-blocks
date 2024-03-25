@@ -1,0 +1,45 @@
+.toggler-container {
+  width: 300px;
+  border-radius: 10px;
+  background-color: #f5f6f7;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 10px;
+  position: relative;
+  justify-content: center;
+  align-content: center;
+  border-width: 0;
+}
+
+label {
+  font-family: "Nunito";
+  z-index: 3;
+  text-align: center;
+}
+
+input {
+  display: none;
+}
+
+.highlighter {
+  position: absolute;
+  width: 80px;
+  height: 26px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  top: 6px;
+  left: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="radio"][value="week"]:checked ~ .highlighter {
+  left: 120px;
+}
+
+input[type="radio"][value="month"]:checked ~ .highlighter {
+  left: 20px;
+}
+
+input[type="radio"][value="day"]:checked ~ .highlighter {
+  left: 220px;
+}
