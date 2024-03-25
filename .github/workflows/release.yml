@@ -21,24 +21,22 @@ jobs:
           persist-credentials: false
           token: ${{secrets.GITHUB_TOKEN}}
 
+      - name: Install Yarn
+        run: npm install -g yarn@latest     
+
       - name: install dependencies
         run: yarn
+             echo "${{yarn version}}"
 
       - name: set up git and authenticate
         run: |
           git config --global user.email "shrilakshmishastry@gmail.com"
           git config --global user.name "shrilakshmishastry"  
       
-      - name: checkout to a new branch 
-        run: |
-          git checkout -b pr-merge-to-develop-temp-branch
-          git add .
-          git commit -m "chore: release new tag "
-          git push origin pr-merge-to-develop-temp-branch    
-         
+             
       - name: version bump up
         run: |
-            yarn --new-version patch
+            yarn version patch
              cat package.json
 
      
@@ -50,7 +48,7 @@ jobs:
          commit-message: "Automated pull request creation"
          title: "Update the main branch"
          body: "Automatically updating the main branch via GitHub Actions"
-         branch: pr-merge-to-develop-temp-branch
+         branch: main
          base: main
        
         
