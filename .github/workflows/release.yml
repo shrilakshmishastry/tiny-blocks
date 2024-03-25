@@ -28,17 +28,25 @@ jobs:
         run: |
           git config --global user.email "shrilakshmishastry@gmail.com"
           git config --global user.name "shrilakshmishastry"  
-         
-         
-      - name: version bump up
-        run: yarn version --new-version minor
-
+      
       - name: checkout to a new branch 
         run: |
           git checkout -b pr-merge-to-develop-temp-branch
           git add .
           git commit -m "chore: release new tag "
-          git push origin pr-merge-to-develop-temp-branch
+          git push origin pr-merge-to-develop-temp-branch    
+         
+      - name:  'Automated Version Bump'
+        uses:  'phips28/gh-action-bump-version@master'
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          minor-wording:  'add, Adds,new, update,chore'
+          major-wording:  'MAJOR,cut-major, feat'
+          patch-wording:  'patch, fixes, fix, refactor'     # Providing patch-wording will override commits
+                                      # defaulting to a patch bump.
+          rc-wording:     'RELEASE, alpha'
+
+     
 
       - name: rise PR and merge
         uses: peter-evans/create-pull-request@v3
