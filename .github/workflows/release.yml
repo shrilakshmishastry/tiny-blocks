@@ -33,7 +33,7 @@ jobs:
       - name: version bump up
         run: yarn version --new-version minor
 
-      - name: checkout to new branch 
+      - name: checkout to a new branch 
         run: |
           git checkout -b pr-merge-to-develop-temp-branch
           git add .
@@ -45,14 +45,14 @@ jobs:
         with: 
          token: ${{secrets.GITHUB_TOKEN}}
          commit-message: "Automated pull request creation"
-         title: "Update main branch"
-         body: "Automatically updating main branch via GitHub Actions"
+         title: "Update the main branch"
+         body: "Automatically updating the main branch via GitHub Actions"
          branch: pr-merge-to-develop-temp-branch
          base: main
         
          
 
-      - name: push changes and create tag
+      - name: push changes and create the tag
         run: |   
           git push --tags
 
