@@ -56,3 +56,7 @@ jobs:
         run: |   
           git push --tags
 
+      - name: delete temp branch
+        run: git branch -D pr-merge-to-develop-temp-branch
+     
+
