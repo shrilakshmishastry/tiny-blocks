@@ -36,8 +36,15 @@ jobs:
           git commit -m "chore: release new tag "
           git push origin pr-merge-to-develop-temp-branch    
          
-      - name: version bump up
-        run: yarn version --new-version minor
+      - name:  'Automated Version Bump'
+        uses:  'phips28/gh-action-bump-version@master'
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          minor-wording:  'add, Adds,new'
+          major-wording:  'MAJOR,cut-major'
+          patch-wording:  'patch, fixes'     # Providing patch-wording will override commits
+                                      # defaulting to a patch bump.
+          rc-wording:     'RELEASE, alpha'
 
      
 
