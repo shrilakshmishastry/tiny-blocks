@@ -65,7 +65,10 @@ jobs:
             echo "${{github.ref}}"
              
       - name: delete version bump up branch
-        run: git branch -D version-bump-up        
+        run: |
+             git branch -D version-bump-up 
+             git push origin --delete version-bump-up
+         
             
       - name: Push changes
         uses: ad-m/github-push-action@master
