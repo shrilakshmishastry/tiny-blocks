@@ -49,14 +49,10 @@ jobs:
          body: "Automatically updating the main branch via GitHub Actions"
          branch: pr-merge-to-develop-temp-branch
          base: main
+       
         
          
 
       - name: push changes and create the tag
         run: |   
           git push --tags
-
-      - name: delete temp branch
-        run: git branch -D pr-merge-to-develop-temp-branch
-     
-
