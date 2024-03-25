@@ -22,7 +22,7 @@ jobs:
       - name: Install Yarn
         run: | 
              npm install 
-             npm install -g yarn@4.0.2  
+             npm install -g yarn@1.22.19
              yarn version
              npm version
 
@@ -40,13 +40,8 @@ jobs:
              
       - name: version bump up
         run: |
-            yarn --new-version patch
-            cat package.json
-
-     
-
-     
-       
+            yarn version --patch
+            cat package.json  
         
          
 
