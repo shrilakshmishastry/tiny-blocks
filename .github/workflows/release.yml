@@ -1,0 +1,83 @@
+name: version update and auto release
+
+run-name: version update and auto-release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  version-bump-up:
+   runs-on: ubuntu-latest
+   steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+             token: ${{secrets.GITHUB_TOKEN}} 
+
+   
+      - name: create new temp branch 
+        run:  git checkout -b version-bump-up
+                 
+        
+      - name: install node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'latest'
+         
+      - name: Install Yarn
+        run: | 
+             npm install 
+             npm install -g yarn@1.22.19
+             yarn version
+             npm version
+
+
+     
+             
+      - name: install dependency
+        run: yarn
+
+      - name: set up git and authenticate
+        run: |
+          git config --global user.email "shrilakshmishastry@gmail.com"
+          git config --global user.name "shrilakshmishastry"  
+      
+             
+      - name: version bump up
+        run: |
+            yarn version --minor
+            cat package.json  
+
+      - name: push temp branch
+        run: |
+            git add .
+            git commit -m "chore: version bump up"
+            git push origin version-bump-up  
+      
+
+      - name: merge PR to main
+       
+        run: | 
+            git checkout main
+            git pull origin version-bump-up  
+            echo "${{github.ref}}"
+             
+              
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+           github_token: ${{ secrets.GITHUB_TOKEN }}
+           branch: ${{ github.ref }} 
+
+
+      - name: delete version bump up branch
+        run: |
+             git branch -D version-bump-up 
+             git push origin --delete version-bump-up
+              
+
+      - name: push changes and create the tag
+        run: |   
+          git push --tags
