@@ -1,0 +1,5 @@
+.grid-container {
+  height: calc(100% / 8);
+  width: 100%;
+  border-bottom: 1px solid black;
+}
